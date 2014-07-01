@@ -1,0 +1,20 @@
+Atividade 3 aula35 - 11:14
+Fazer a exclusão de artigos e comentários.
+Mas apenas o próprio dono e o admin podem
+remover artigos e comentários.
+
+Atenção! O dono de um artigo pode excluir 
+comentário em seu artigo feito por outros
+usuários.
+
+Atividade 2 aula34 - 11:24
+Fazer a inserção de novos artigos
+e de novos comentários!
+
+Atividade 1 aula34 - 10:17 às 10:47
+Buscar os comentários no banco de dados!
+
+Atenção para não exibir os comentários
+que não existem!
+
+Dica: mysqli_num_rows

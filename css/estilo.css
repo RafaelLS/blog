@@ -1,0 +1,84 @@
+/* 
+    Created on : 22/05/2014, 11:00:20
+    Author     : Prof. Tarcnux
+    Colaboração: Aluno Rafael Lopes Silva
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Bad+Script);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+body{
+    background-color: darkslategrey;
+}
+h1{
+    text-align: center;
+    font-family: Garamond, serif;
+    line-height: 1em;
+    color: #ffffff;
+    font-weight:bold;
+    font-size: 65px;
+    text-shadow:0px 0px 0 rgb(231,231,231),
+        1px 1px 0 rgb(216,216,216),
+        2px 2px 0 rgb(202,202,202),
+        3px 3px 0 rgb(187,187,187),
+        4px 4px 0 rgb(173,173,173),
+        5px 5px 0 rgb(158,158,158), 
+        6px 6px 0 rgb(144,144,144),
+        7px 7px 6px rgba(0,0,0,0.6),
+        7px 7px 1px rgba(0,0,0,0.5),
+        0px 0px 6px rgba(0,0,0,.2);
+}
+
+header h2, article section h2{
+    font-family: Oswald;
+    color: #ffffff;
+    text-shadow:0px 0px 0 rgb(231,231,231),
+        1px 1px 0 rgb(216,216,216),
+        1px 1px 0 rgb(202,202,202),
+        2px 2px 0 rgb(187,187,187),
+        3px 3px 0 rgb(173,173,173),
+        4px 4px 0 rgb(158,158,158), 
+        5px 5px 0 rgb(144,144,144),
+        6px 6px 5px rgba(0,0,0,0.6),
+        7px 7px 1px rgba(0,0,0,0.5),
+        0px 0px 5px rgba(0,0,0,.2);
+}
+article p{
+    font-family: "Bad Script";
+}
+article header p{
+    font-family: arial;
+}
+
+/*Artigo - Postagem do Blog*/
+article{
+    padding: 20px;
+    background-color: #aaa;
+    width: 700px;
+    height: auto;
+    margin:  0 auto;
+    border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    border:1px solid #000000;
+    margin-bottom: 20px;
+}
+
+article:hover{
+    background-color: #ddd;
+    box-shadow: 5px 5px 15px black;
+}
+
+/*Comentário do artigo*/
+article section article{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+p a{
+    color: white;
+    text-decoration: none;
+}
+
+p a:hover{
+    text-decoration: underline;
+}

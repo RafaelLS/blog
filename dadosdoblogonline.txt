@@ -1,0 +1,3 @@
+usu : u192760332_ublog
+banco: u192760332_blog
+senha: positivo
