@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 26-Jun-2014 às 18:37
--- Versão do servidor: 5.6.16
--- PHP Version: 5.5.11
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.27
+-- Versão do PHP: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,11 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `blog`
--- 
-
-	create database blog;
-	use blog;
+-- Banco de Dados: `blog`
+--
+CREATE DATABASE `blog` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `blog`;
 
 -- --------------------------------------------------------
 
@@ -40,16 +39,18 @@ CREATE TABLE IF NOT EXISTS `tblartigos` (
   KEY `idUsers` (`idUsers`),
   KEY `idUsers_2` (`idUsers`),
   KEY `idUsers_3` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Extraindo dados da tabela `tblartigos`
 --
 
 INSERT INTO `tblartigos` (`idArtigos`, `idUsers`, `assunto`, `artigo`, `dtCriacao`, `dtAtualiza`) VALUES
-(7, 3, 'Foii?', '<p>:D</p>', '2014-05-29 09:49:05', '2014-06-26 13:35:51'),
-(8, 4, 'Ixi', 'Bugou tudo', '2014-06-03 10:11:02', '2014-06-03 10:11:02'),
-(9, 1, ':(', '<p>:(</p>', '2014-06-26 13:34:21', '2014-06-26 13:34:46');
+(9, 1, 'Brasil x Mexico', '<p>0 X 0</p>', '2014-06-26 13:34:21', '2014-07-01 10:13:52'),
+(10, 1, 'Brasil x Chile', '<p>&nbsp;1 Brasil x 1 Chile Tempo normal</p>\r\n<p>0 Brasil x 0 Chile Prorroga&ccedil;&atilde;o</p>\r\n<p>3 Brasil x 4 Chile P&ecirc;naltis</p>', '2014-07-01 10:14:32', '2014-07-01 10:16:53'),
+(11, 1, 'Brasil x CamarÃµes', '<p>4 Brasil x 1 Camar&otilde;es</p>', '2014-07-01 10:17:35', '2014-07-01 10:17:35'),
+(12, 1, 'Brasil x CrÃ³acia', '<p>3 Brasil x 1 Cr&oacute;acia</p>', '2014-07-01 10:18:08', '2014-07-01 10:18:08'),
+(13, 2, 'Brasil x Col?mbia', '<p>Palpite:</p>\r\n<p>2 Brasil x 1 Col&ocirc;mbia</p>', '2014-07-01 10:27:14', '2014-07-01 10:30:47');
 
 -- --------------------------------------------------------
 
@@ -68,16 +69,7 @@ CREATE TABLE IF NOT EXISTS `tblcomentarios` (
   KEY `idUsers` (`idUsers`,`idArtigos`),
   KEY `idUsers_2` (`idUsers`),
   KEY `idArtigos` (`idArtigos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
-
---
--- Extraindo dados da tabela `tblcomentarios`
---
-
-INSERT INTO `tblcomentarios` (`idComentarios`, `idUsers`, `idArtigos`, `comentario`, `dtCriacao`, `dtAtualiza`) VALUES
-(17, 2, 8, 'Ner', '2014-06-03 10:12:33', '2014-06-03 10:12:33'),
-(18, 2, 7, 'Até agora não', '2014-06-03 10:12:52', '2014-06-03 10:12:52'),
-(19, 1, 9, '<p>:)</p>\r\n<p>&nbsp;</p>', '2014-06-26 13:34:31', '2014-06-26 13:34:59');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 -- --------------------------------------------------------
 
@@ -103,23 +95,23 @@ CREATE TABLE IF NOT EXISTS `tblusers` (
 
 INSERT INTO `tblusers` (`idUsers`, `nome`, `login`, `email`, `senha`, `dtCriacao`, `dtAtualiza`) VALUES
 (0, 'Anonimus', '', '', '', '2014-05-29 08:42:28', '2014-05-29 08:42:28'),
-(1, 'Administrador do Sistema', 'admin', 'admin@localhost', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2014-05-15 10:11:01', '0000-00-00 00:00:00'),
+(1, 'Rafael Lopes', 'admin', 'admin@localhost', 'dafd0d3d78ad893c92072177d4d0ee6eb716b6b9', '2014-05-15 10:11:01', '2014-07-01 10:25:29'),
 (2, 'Palhaço Patati', 'patati', 'patati@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2014-05-15 11:18:57', '2014-05-15 11:18:57'),
 (3, 'Palhaço Patatá', 'patata', 'patata@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2014-05-15 11:18:57', '2014-05-15 11:18:57'),
 (4, 'Aula 33 Blog tabelas Artigos e Comentários', 'aula33', 'aula33@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2014-05-22 09:14:20', '2014-05-22 09:14:20');
 
 --
--- Constraints for dumped tables
+-- Restrições para as tabelas dumpadas
 --
 
 --
--- Limitadores para a tabela `tblartigos`
+-- Restrições para a tabela `tblartigos`
 --
 ALTER TABLE `tblartigos`
   ADD CONSTRAINT `tblartigos_ibfk_1` FOREIGN KEY (`idUsers`) REFERENCES `tblusers` (`idUsers`);
 
 --
--- Limitadores para a tabela `tblcomentarios`
+-- Restrições para a tabela `tblcomentarios`
 --
 ALTER TABLE `tblcomentarios`
   ADD CONSTRAINT `tblcomentarios_ibfk_3` FOREIGN KEY (`idUsers`) REFERENCES `tblusers` (`idUsers`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -132,3 +124,5 @@ ALTER TABLE `tblcomentarios`
 GRANT USAGE ON *.* TO 'userbd'@'localhost' IDENTIFIED BY PASSWORD '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257';
 
 GRANT ALL PRIVILEGES ON `blog`.* TO 'userbd'@'localhost';
+
+
